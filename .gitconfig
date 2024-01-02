@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = JoeManto
+	email = joemanto123@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = Joe Manto
+#	email = joemanto123@gmail.com
+[credential]
+	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
