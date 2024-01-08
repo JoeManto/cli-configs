@@ -79,8 +79,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 colorscheme xcode
 
-let g:syntastic_swift_swiftlint_use_defaults = 1
-"let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm'] 
+autocmd FileType swift let g:syntastic_swift_swiftlint_use_defaults = 1
+autocmd FileType html let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm'] 
 
 call plug#begin('~/.vim/plugged')
 
