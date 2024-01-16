@@ -77,7 +77,6 @@ set wildmode=list:longest
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-colorscheme xcode
 
 autocmd FileType swift let g:syntastic_swift_swiftlint_use_defaults = 1
 autocmd FileType html let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm'] 
