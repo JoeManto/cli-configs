@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
   		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-
 	use {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -50,4 +49,16 @@ return require('packer').startup(function(use)
 		"~/documents/cs/nvim-plugins/bookmark.nvim",
 		requires = { "nvim-lua/plenary.nvim" }
 	}
+
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end
+    }
+
+    use {
+        "ThePrimeagen/vim-be-good"
+    }
 end)

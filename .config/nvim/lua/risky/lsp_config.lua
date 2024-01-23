@@ -10,6 +10,8 @@ local on_attach = function(_,_)
 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
 	vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+	vim.keymap.set('n', '<leader>w', vim.lsp.buf.completion, {})
+    vim.keymap.set('n', '<leader>d', vim.lsp.buf.declaration, {})
 end
 
 require("lspconfig").lua_ls.setup {
@@ -23,7 +25,7 @@ require("lspconfig").clangd.setup {
 local swift_lsp = vim.api.nvim_create_augroup("swift_lsp", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
  	pattern = { "swift" },
- 	callback = function()
+ 	callback = function(args)
  		local root_dir = vim.fs.dirname(vim.fs.find({
  			"Package.swift",
  			".git",
@@ -33,6 +35,8 @@ vim.api.nvim_create_autocmd("FileType", {
  			cmd = { "sourcekit-lsp" },
  			root_dir = root_dir,
  		})
+
+        on_attach()
  		vim.lsp.buf_attach_client(0, client)
  	end,
  	group = swift_lsp,
